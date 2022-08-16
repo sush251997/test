@@ -1,0 +1,354 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>PLant Disease</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="manifest" href="site.html">
+	<link rel="apple-touch-icon" href="icon.html">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- bootstrap v4.0.0 -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<!-- fontawesome-icons css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+	<!-- themify-icons css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}">
+	<!-- elegant css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/elegant.css') }}">
+	<!-- meanmenu css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/meanmenu.min.css') }}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+	<!-- venobox css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/venobox.css') }}">
+	<!-- jquery-ui.min css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/jquery-ui.min.css') }}">
+	<!-- slick css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
+	<!-- slick-theme css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/slick-theme.css') }}">
+	<!-- helper css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/helper.css') }}">
+	<!-- style css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }} ">
+	<!-- responsive css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body>
+	<!--header-area start-->
+	<header class="header-area">
+		<!--header-top-->
+		<div class="header-top d-none d-lg-block">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-sm-6">
+						<div class="contact-info">
+							<ul>
+								<li>Welcome to “The Farmers Friend Website” <span>|</span></li>
+								<li><i class="fa fa-clock-o"></i>Monday - Saturday: 7.AM - 5.PM</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="contact-info pull-right">
+							<ul>
+								<li><i class="fa fa-phone"></i>(88) 0111 223 445 <span>|</span></li>
+								<li><i class="fa fa-home"></i>20 Green Farm, Mumbai Maharashtra.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--header-bottom-->
+		<div id="sticker" class="header-bottom">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-2 col-sm-2">
+						<div class="logo">
+							<a href="index.html"><img src="../static/images/logo.png" alt="logo"></a>
+						</div>
+					</div>
+					<div class="col-lg-10 col-sm-10">
+						<div class="mainmenu text-right">
+							<nav>
+								<ul>
+									<li><a href="/index">Home</a></li>
+									<li><a href="#">Services</a>
+										<ul class="submenu">
+											<li><a href="/plntds">Plant Disease</a></li>
+										</ul>
+									</li>
+									<li><a href="/contact">Contact Us</a></li>
+									<li><a href="/logout">Logout</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--header-area end-->
+
+	<!--page-banner-area start-->
+	<div class="page-banner-area bg-1">
+		<div class="container">
+			<div class="row align-items-center height-400">
+				<div class="col-lg-12">
+					<div class="page-banner-text text-center mt-minus-10">
+						<h2>Services</h2>
+						<ul class="site-breadcrumb text-black">
+							<li><a href="#">Home</a> <span>></span></li>
+							<li>Pages <span>></span></li>
+							<li>Service</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--banner-area end-->
+
+	<!--story-area start-->
+	<div class="company-story-area mt-100 sm-mt-80">
+		<div class="container">
+			<div class="row" style="margin-left: 300px;">
+				<legend><strong>Upload Your plant image to detect disease</strong></legend>
+				<form action="/plntds" method="POST" id="search" enctype="multipart/form-data">
+					<div class="input-group mb-3">
+						<input type="file" name="dsfile" class="form-control" id="txtArea"
+							placeholder="Search for a Location" aria-label="Location" aria-describedby="button-addon2"
+							required>
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary" id="button-addon2" type="submit">
+								<i class="fa fa-file-image"></i> Submit Uploaded file
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--story-area end-->
+
+	<!--counterup-area start-->
+	<div class="counterUp-area sm-mt-10">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<div class="section-title text-center">
+						<h2><small class="text-muted">Plant Disease Predicted</small></h2>
+					</div>
+				</div>
+				<div class="col-sm-3" style="margin-left: 450px;">
+					<div class="single-counter">
+						<div class="card border-secondary mb-3" style="max-width: 18rem;">
+							<div class="card-header"><strong>Prediction Answer</strong></div>
+							<div class="card-body">
+								<article>
+									<p>Predicted disease: </p>
+									<Strong><em>{{op}}</em></Strong>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--counterup-area end-->
+
+	<!--brands-area start-->
+	<div class="brand-area bg-white">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="brand-items">
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="../static/images/brands/1.png" alt="" />
+								<img class="brand-dynamic" src="../static/images/brands/1-hover.png" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="../static/images/brands/2.png" alt="" />
+								<img class="brand-dynamic" src="../static/images/brands/2-hover.png" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="../static/images/brands/3.png" alt="" />
+								<img class="brand-dynamic" src="../static/images/brands/3-hover.png" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="../static/images/brands/4.png" alt="" />
+								<img class="brand-dynamic" src="../static/images/brands/4-hover.png" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="../static/images/brands/5.png" alt="" />
+								<img class="brand-dynamic" src="../static/images/brands/5-hover.png" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="../static/images/brands/6.png" alt="" />
+								<img class="brand-dynamic" src="../static/images/brands/6-hover.png" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="../static/images/brands/7.png" alt="" />
+								<img class="brand-dynamic" src="../static/images/brands/7-hover.png" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="../static/images/brands/8.png" alt="" />
+								<img class="brand-dynamic" src="../static/images/brands/8-hover.png" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--brands-area end-->
+
+	<!--subscribe-area start-->
+	<div class="subscribe-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3">
+					<div class="subscribe-form">
+						<h3>Subscribe To Our Newletter</h3>
+						<p>We will send you the monthly Newsletter</p>
+						<input type="email" placeholder="Your Email" />
+						<button class="btn-common">Subscribe</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--subscribe-area end-->
+
+	<!--footer-area start-->
+	<footer class="footer-area">
+		<!--footer-top-->
+		<div class="footer-widgets">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget">
+							<h4>About Company</h4>
+							<div class="about-widget">
+								<p>We are the professional the Farmers Friend company We have more service for your
+									choice.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget">
+							<h4>Twitter Feed</h4>
+							<div class="twitter-feed">
+								<ul class="list-none">
+									<li>
+										<ul class="list-none inline-list">
+											<li><a href="#"><i class="social_twitter"></i>Thegarden</a> <span>|</span>
+											</li>
+											<li>8 months ago</li>
+										</ul>
+										<p>It's an exclusive offer. Varmo Magento Multipurpose Responsive Theme</p>
+									</li>
+									<li>
+										<ul class="list-none inline-list">
+											<li><a href="#"><i class="social_twitter"></i>Thegarden</a> <span>|</span>
+											</li>
+											<li>8 months ago</li>
+										</ul>
+										<p>It's an exclusive offer. Varmo Magento Multipurpose Responsive Theme</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget">
+							<h4>Instagram</h4>
+							<div class="instagram-imgages">
+								<a href="#"><img src="../static/images/instagram/1.jpg" alt="instagram" /></a>
+								<a href="#"><img src="../static/images/instagram/2.jpg" alt="instagram" /></a>
+								<a href="#"><img src="../static/images/instagram/3.jpg" alt="instagram" /></a>
+								<a href="#"><img src="../static/images/instagram/4.jpg" alt="instagram" /></a>
+								<a href="#"><img src="../static/images/instagram/5.jpg" alt="instagram" /></a>
+								<a href="#"><img src="../static/images/instagram/6.jpg" alt="instagram" /></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget">
+							<h4>Working Hours</h4>
+							<div class="work-hours">
+								<ul class="list-none">
+									<li>Monday <span>07:00-17:00</span></li>
+									<li>Tuesday <span>07:00-17:00</span></li>
+									<li>Wednesday <span>07:00-17:00</span></li>
+									<li>Thursday <span>07:00-17:00</span></li>
+									<li>Friday <span>07:00-17:00</span></li>
+									<li>Saturday <span>07:00-17:00</span></li>
+									<li>Sunday <span>CLOSE</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--footer-area end-->
+
+	<!-- modernizr js -->
+	<script src="{{ url_for('static', filename='js/vendor/modernizr-3.6.0.min.js') }}"></script>
+	<!-- jquery-1.12.0 version -->
+	<script src="{{ url_for('static', filename='js/vendor/jquery-1.12.0.min.js') }}"></script>
+	<!-- bootstra.min js -->
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<!-- meanmenu js -->
+	<script src="{{ url_for('static', filename='js/jquery.meanmenu.min.js') }}"></script>
+	<!-- easing js -->
+	<script src="{{ url_for('static', filename='js/jquery.easing.min.js') }}"></script>
+	<!---venobox-js-->
+	<script src="{{ url_for('static', filename='js/venobox.min.js') }}"></script>
+	<!---slick-js-->
+	<script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+	<!---waypoints-js-->
+	<script src="{{ url_for('static', filename='js/waypoints.js') }}"></script>
+	<!---counterup-js-->
+	<script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+	<!---isotop-js-->
+	<script src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
+	<!-- jquery-ui js -->
+	<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+	<!-- jquery.countdown js -->
+	<script src="{{ url_for('static', filename='js/jquery.countdown.min.js') }}"></script>
+	<!-- plugins js -->
+	<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+	<!-- main js -->
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

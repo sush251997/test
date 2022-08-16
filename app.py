@@ -150,16 +150,12 @@ def plntds():
             from os import listdir
             from os.path import isfile, join
             predict_dir_path = file_path
-            onlyfiles = [f for f in listdir(
-                predict_dir_path) if isfile(join(predict_dir_path, f))]
-            # print(onlyfiles)
             
             import tensorflow
             from tensorflow.keras.preprocessing import image
             from tensorflow.keras.models import load_model
             model = load_model("VGG_plant.hp5")
             image_size = 224
-            # for file in onlyfiles:
             img = image.load_img(predict_dir_path,
                                 target_size=(image_size, image_size))
             x = image.img_to_array(img)

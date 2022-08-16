@@ -141,7 +141,7 @@ def plntds():
             # Save the file to ./uploads
             basepath = os.path.dirname(__file__)
             file_path = os.path.join(
-                basepath, 'static/upload', secure_filename(f.filename))
+                basepath, 'static/upload/', secure_filename(f.filename))
             f.save(file_path)
             fname = secure_filename(f.filename)
             # print("printing file name")
@@ -149,7 +149,7 @@ def plntds():
         
             from os import listdir
             from os.path import isfile, join
-            predict_dir_path = r'static/upload/'
+            predict_dir_path = file_path
             onlyfiles = [f for f in listdir(
                 predict_dir_path) if isfile(join(predict_dir_path, f))]
             # print(onlyfiles)

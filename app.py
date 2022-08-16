@@ -160,7 +160,7 @@ def plntds():
             model = load_model("VGG_plant.hp5")
             image_size = 224
             # for file in onlyfiles:
-            img = image.load_img(predict_dir_path+str(fname),
+            img = image.load_img(predict_dir_path,
                                 target_size=(image_size, image_size))
             x = image.img_to_array(img)
             # print("printing X#######")
